@@ -33,10 +33,10 @@ export default function DashboardPage() {
             <p className="text-gray-600 mt-2">Welcome back! Manage your products and orders</p>
           </div>
           <Link
-            href="/dashboard/add-product"
+            href="/dashboard/upload"
             className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-lg transition"
           >
-            + Add Product
+            + Post Phone
           </Link>
         </div>
 

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { v2 as cloudinary } from 'cloudinary';
+import { v2 as cloudinary, UploadApiErrorResponse, UploadApiResponse } from 'cloudinary';
 
 cloudinary.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
@@ -30,8 +30,8 @@ export async function POST(request: NextRequest) {
           resource_type: 'auto',
           quality: 'auto:good',
         },
-        (error, result) => {
-          if (error) reject(error);
+        (err: UploadApiErrorResponse | undefined, result: UploadApiResponse | undefined) => {
+          if (err) reject(err);
           else resolve(result);
         }
       );
